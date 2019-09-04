@@ -72,7 +72,7 @@ btnConnect.addEventListener('click', function (e) {
 
   client.on("message", function (topic, payload) {
     //let finalTopic = topic.slice(5);
-    //console.log([finalTopic, payload].join(": "));
+    console.log("message= " + [topic, payload].join(": "));
     let tbl = document.getElementById('receiver');
     let tbody = document.getElementById('msg');
     let tr = document.createElement('tr');
