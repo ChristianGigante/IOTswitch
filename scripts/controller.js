@@ -31,9 +31,9 @@ btnConnect.addEventListener('click', function (e) {
     btnDisConnect.disabled = false;
     btnConnect.disabled = true;
     btnStatus.setAttribute('value', 'Successfully Connected!')
+    btnStatus.setAttribute('class', 'btn btn-success')
     btnSubscribe.disabled = false;
     btnPublish.disabled = false;
-    btnStatus.setAttribute('class', 'btn btn-success')
   });
 
   // client.publish("mqtt/demox", "hello world!")
