@@ -16,6 +16,7 @@ var subTopic = document.getElementById('subTopic');
 var btnSubscribe = document.getElementById('btnSubscribe');
 var btnUnsubscribe = document.getElementById('btnUnsubscribe');
 
+btnDisConnect.disabled = true;
 
 //btnConnect
 btnConnect.addEventListener('click', function (e) {
