@@ -23,13 +23,16 @@ btnConnect.addEventListener('click', function (e) {
   //client
   var client = mqtt.connect(broker.value)
   // client.subscribe("mqtt/demox")
-
+  //status
+  btnStatus.setAttribute('value', 'Connecting..,')
   client.on("connect", function () {
     console.log("Successfully connected");
     btnStatus.disabled = false;
     btnDisConnect.disabled = false;
     btnConnect.disabled = true;
     btnStatus.setAttribute('value', 'Successfully Connected!')
+    btnSubscribe.disabled = false;
+    btnPublish.disabled = false;
     btnStatus.setAttribute('class', 'btn btn-success')
   });
 
@@ -45,7 +48,7 @@ btnConnect.addEventListener('click', function (e) {
     e.preventDefault();
     client.subscribe(subTopic.value);
     btnUnsubscribe.disabled = false;
-    btnSubscribe.disabled = true;
+    // btnSubscribe.disabled = true;
     console.log("Subscribe to: " + subTopic.value)
   })
 
@@ -53,8 +56,8 @@ btnConnect.addEventListener('click', function (e) {
   btnUnsubscribe.addEventListener('click', function (e) {
     e.preventDefault();
     client.unsubscribe(subTopic.value);
-    btnUnsubscribe.disabled = true;
-    btnSubscribe.disabled = false;
+    // btnUnsubscribe.disabled = true;
+    // btnSubscribe.disabled = false;
     console.log("Unsubscribe to " + subTopic.value)
   })
 
@@ -64,6 +67,9 @@ btnConnect.addEventListener('click', function (e) {
     btnStatus.disabled = true;
     btnDisConnect.disabled = true;
     btnConnect.disabled = false;
+    btnSubscribe.disabled = true;
+    btnPublish.disabled = true;
+    btnUnsubscribe.disabled = true;
     console.log('Disconnected');
     btnStatus.setAttribute('value', 'Successfully Disconnected!')
     btnStatus.setAttribute('class', 'btn btn-warning')
