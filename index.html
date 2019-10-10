@@ -4,21 +4,29 @@
   <title>IOTswitch</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="scripts/browserMqtt.js"></script>
-    <script src="scripts/myController.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="scripts/browserMqtt.js"></script>
+  <script src="scripts/myController.js"></script>
+  <style>
+    img{
+        height: 400px;
+        width: auto;
+      }
+    </style>
 </head>
 
 <body>
-  <div class="jumbotron">
-    <h1 class="text-center"><strong>IOT Switch</strong></h1>
-</div>
-<div class="container text-center">
+  <br><br>
+  <h1 class="text-center"><strong>IOT Switch</strong></h1>
+
+  <div class="container text-center">
+    <img src="on.png" alt="onBulb" id="on">
+    <img src="off.png" alt="onBulb" id="off">
     <h2 id="status">The device is currently OFF</h2><br>
     <input type="button" class="btn btn-success btn-lg btnOn" value="ON">
     <input type="button" class="btn btn-danger btn-lg btnOff" value="OFF">
-</div>
+  </div>
 
 </body>
 
